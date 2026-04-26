@@ -1,8 +1,17 @@
 .venv/
 .DS_Store
 .claude/
-/data/
-/models/
+# Ignore raw data and large model artifacts
+/data/*.csv
+!/data/predictions.csv
+/data/wa-pv-2006/
+/models/arima.pkl
+/models/sarima.pkl
+/models/baseline.pkl
+/models/lightgbm.pkl
+/models/ridge.pkl
+/models/xgboost.pkl
+/models/tuned_model.pkl
 .env
 __pycache__/
 .ipynb_checkpoints/
