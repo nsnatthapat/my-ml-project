@@ -198,7 +198,7 @@ def _make_demo_results() -> dict:
 def _make_demo_predictions(n: int = 20_000) -> pd.DataFrame:
     rng   = np.random.default_rng(42)
     dates = pd.date_range("2006-10-20", "2006-12-31 23:55", freq="5min")
-    idx   = rng.choice(len(dates), size=n, replace=False)
+    idx   = rng.choice(len(dates), size=n, replace=True)   # multiple sites per timestamp
     idx.sort()
     times = dates[idx]
 
@@ -230,7 +230,7 @@ def _make_demo_predictions(n: int = 20_000) -> pd.DataFrame:
 def _make_demo_features(n: int = 200_000) -> pd.DataFrame:
     rng      = np.random.default_rng(42)
     dates    = pd.date_range("2006-01-01", "2006-12-31 23:55", freq="5min")
-    idx      = rng.choice(len(dates), size=n, replace=False)
+    idx      = rng.choice(len(dates), size=n, replace=True)   # 76 sites share timestamps
     idx.sort()
     times    = dates[idx]
     hours    = times.hour.to_numpy().astype(float)
