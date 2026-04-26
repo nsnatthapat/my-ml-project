@@ -667,8 +667,7 @@ elif "Data" in page:
         color="hour",
         color_continuous_scale="YlOrRd",
         opacity=0.4,
-        trendline="lowess",
-        trendline_color_override=NAVY,
+
         title=f"{sel_feat} vs Power (MW) — coloured by hour of day",
         labels={"Power(MW)": "Power (MW)", sel_feat: sel_feat},
     )
