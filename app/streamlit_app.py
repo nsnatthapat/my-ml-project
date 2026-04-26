@@ -9,7 +9,6 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import streamlit as st
 from pathlib import Path
 
@@ -208,7 +207,8 @@ def _make_demo_predictions(n: int = 20_000) -> pd.DataFrame:
     capacity = rng.choice([0.2, 0.3, 0.4, 1.0, 2.0, 4.0, 5.0, 30.0, 50.0], size=n)
 
     actual       = _solar_mw(hours, months, capacity, noise_scale=0.08, rng=rng)
-    persistence  = np.roll(actual, 1); persistence[0] = actual[0]
+    persistence  = np.roll(actual, 1)
+    persistence[0] = actual[0]
     lgbm_pred    = _solar_mw(hours, months, capacity, noise_scale=0.04, rng=rng)
     xgb_pred     = _solar_mw(hours, months, capacity, noise_scale=0.05, rng=rng)
     ridge_pred   = _solar_mw(hours, months, capacity, noise_scale=0.09, rng=rng)

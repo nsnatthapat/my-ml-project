@@ -244,7 +244,7 @@ def run() -> None:
     mlflow.set_experiment(EXPERIMENT)
     print(f"MLflow tracking URI : {TRACKING_URI}")
     print(f"Experiment          : {EXPERIMENT}")
-    print(f"View runs at        : http://localhost:5000  (after starting server)")
+    print("View runs at        : http://localhost:5000  (after starting server)")
 
     # ── Load data ──────────────────────────────────────────────────────────────
     print(f"\nLoading {FEATURES_PATH} ...")
@@ -270,7 +270,7 @@ def run() -> None:
         print(f"\n{'─' * 60}")
         print(f"Config: {cfg['name']}")
         print(f"  Params: {cfg['params']}")
-        print(f"  Running 5-fold CV + final fit ...")
+        print("  Running 5-fold CV + final fit ...")
 
         model, test_m, run_id = train_and_log(
             cfg, X_train, y_train, X_test, y_test, persist_rmse
@@ -316,9 +316,9 @@ def run() -> None:
         print(f"  Source run : {best_run_id}")
 
     print(f"\nTotal elapsed : {time.time()-t_total:.1f}s")
-    print(f"\nStart the MLflow UI to explore runs:")
-    print(f"  mlflow server --host 127.0.0.1 --port 5000")
-    print(f"  open http://localhost:5000")
+    print("\nStart the MLflow UI to explore runs:")
+    print("  mlflow server --host 127.0.0.1 --port 5000")
+    print("  open http://localhost:5000")
 
 
 if __name__ == "__main__":

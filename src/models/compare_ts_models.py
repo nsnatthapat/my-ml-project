@@ -29,7 +29,6 @@ TimesFM note:
 """
 
 import os
-import sys
 import time
 import warnings
 import argparse
@@ -207,7 +206,7 @@ def run(n_cv_splits: int = 5) -> None:
           f"mean={series.mean():.1f} MW")
 
     train, test = chronological_split(series, test_size=0.2)
-    print(f"\nSplit:")
+    print("\nSplit:")
     print(f"  Train ({len(train):,} hrs): {train.index[0]} → {train.index[-1]}")
     print(f"  Test  ({len(test):,} hrs) : {test.index[0]} → {test.index[-1]}")
 
@@ -238,7 +237,7 @@ def run(n_cv_splits: int = 5) -> None:
     arima_cv_mean, arima_cv_std = walk_forward_cv(train, arima_order, None, n_cv_splits)
     print(f"  CV RMSE: {arima_cv_mean:.2f} ± {arima_cv_std:.2f}  ({time.time()-t0:.1f}s)")
 
-    print(f"  Fitting on full training set ...")
+    print("  Fitting on full training set ...")
     t0 = time.time()
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
@@ -274,7 +273,7 @@ def run(n_cv_splits: int = 5) -> None:
     )
     print(f"  CV RMSE: {sarima_cv_mean:.2f} ± {sarima_cv_std:.2f}  ({time.time()-t0:.1f}s)")
 
-    print(f"  Fitting on full training set ...")
+    print("  Fitting on full training set ...")
     t0 = time.time()
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")

@@ -12,7 +12,6 @@ Usage:
 """
 
 import json
-import sys
 import time
 import argparse
 import joblib
@@ -223,7 +222,7 @@ def run(n_trials: int = 30, cv_sample: int | None = 500_000) -> None:
 
     print(f"\n{'─' * 72}")
     print(f"Best trial: #{best.number}  CV RMSE={best_cv_rmse:.4f}")
-    print(f"\nBest hyperparameters:")
+    print("\nBest hyperparameters:")
     for k, v in sorted(best_params.items()):
         print(f"  {k:<22}: {v}")
 
@@ -258,7 +257,7 @@ def run(n_trials: int = 30, cv_sample: int | None = 500_000) -> None:
     y_pred = final_model.predict(X_test)
     m = evaluate(y_test.values, y_pred)
 
-    print(f"\nTest set evaluation (chronological 20% holdout):")
+    print("\nTest set evaluation (chronological 20% holdout):")
     print(f"{'─' * 40}")
     print(f"  {'Metric':<8}  {'Tuned LightGBM':>16}  {'Baseline LightGBM':>18}")
     print(f"  {'─'*8}  {'─'*16}  {'─'*18}")

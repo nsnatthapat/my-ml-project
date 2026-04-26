@@ -36,7 +36,7 @@ def main() -> None:
 
     # ── Create features ───────────────────────────────────────────────────────
     t1 = time.time()
-    print(f"\nEngineering features ...")
+    print("\nEngineering features ...")
     df_features = create_features(df_cleaned)
     new_cols = sorted(set(df_features.columns) - set(df_cleaned.columns))
     dropped_cols = sorted(set(df_cleaned.columns) - set(df_features.columns))
@@ -47,7 +47,7 @@ def main() -> None:
 
     # ── Select features ───────────────────────────────────────────────────────
     t2 = time.time()
-    print(f"\nSelecting features ...")
+    print("\nSelecting features ...")
     selected_names, df_selected = select_features(df_features)
     print(f"  Shape: {df_selected.shape[0]:,} rows x {df_selected.shape[1]} columns")
     print(f"  Elapsed: {time.time() - t2:.1f}s")

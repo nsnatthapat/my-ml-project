@@ -330,7 +330,7 @@ def select_features(
 
     # ── Log results ───────────────────────────────────────────────────────────
     total_dropped = len(corr_drop) + len(var_drop)
-    print(f"\nFeature selection summary:")
+    print("\nFeature selection summary:")
     print(f"  Input features  : {len(candidates)}")
     print(f"  Correlation drops: {len(corr_drop)}")
     print(f"  Variance drops  : {len(var_drop)}")

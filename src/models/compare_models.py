@@ -17,7 +17,6 @@ Usage:
     python src/models/compare_models.py --cv-sample 500000
 """
 
-import sys
 import time
 import argparse
 import joblib
@@ -197,7 +196,7 @@ def run(cv_sample: int | None = 500_000) -> None:
     print(f"  {len(df):,} rows x {len(df.columns)} columns")
 
     train_df, test_df = chronological_split(df, test_size=0.2)
-    print(f"\nChronological split:")
+    print("\nChronological split:")
     print(f"  Train: {train_df[TIME_COL].min()} → {train_df[TIME_COL].max()}  ({len(train_df):,} rows)")
     print(f"  Test : {test_df[TIME_COL].min()} → {test_df[TIME_COL].max()}  ({len(test_df):,} rows)")
 

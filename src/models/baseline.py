@@ -16,7 +16,6 @@ Usage:
     python src/models/baseline.py --test-size 0.2
 """
 
-import sys
 import time
 import argparse
 import joblib
@@ -149,7 +148,7 @@ def run(test_size: float = 0.2) -> None:
     # StandardScaler + LinearRegression. The scaler is important because
     # features span very different magnitudes (capacity_mw in 0.1–109,
     # hour in 0–23, lon in -123 to -117).
-    print(f"\nBaseline 2: LinearRegression")
+    print("\nBaseline 2: LinearRegression")
     t1 = time.time()
     pipeline = Pipeline([
         ("scaler", StandardScaler()),
@@ -170,7 +169,7 @@ def run(test_size: float = 0.2) -> None:
     # Improvement over persistence
     delta_mae  = persist_metrics["MAE"]  - lr_metrics["MAE"]
     delta_rmse = persist_metrics["RMSE"] - lr_metrics["RMSE"]
-    print(f"\n  LinearRegression vs Persistence:")
+    print("\n  LinearRegression vs Persistence:")
     print(f"    MAE  improvement : {delta_mae:+.4f} MW  "
           f"({'better' if delta_mae > 0 else 'worse'})")
     print(f"    RMSE improvement : {delta_rmse:+.4f} MW  "
@@ -190,7 +189,7 @@ def run(test_size: float = 0.2) -> None:
         },
         MODEL_PATH,
     )
-    print(f"  Saved.")
+    print("  Saved.")
     print(f"\nTotal elapsed: {time.time() - t0:.1f}s")
 
 
