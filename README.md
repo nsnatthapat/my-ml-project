@@ -2,7 +2,7 @@
 
 > End-to-end machine learning pipeline for multi-site, multi-step-ahead solar photovoltaic power forecasting — from raw 5-minute CSVs to a production-ready Streamlit dashboard.
 
-**Live Demo:** [https://your-app-url.streamlit.app](https://your-app-url.streamlit.app) *(deploy link — coming soon)*
+**Live Demo:** [my-ml-project-ji78cmjamcqzgaraetz7ts.streamlit.app](https://my-ml-project-ji78cmjamcqzgaraetz7ts.streamlit.app)
 &nbsp;|&nbsp;
 **GitHub:** [github.com/nsnatthapat/my-ml-project](https://github.com/nsnatthapat/my-ml-project)
 
